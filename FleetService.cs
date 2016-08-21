@@ -17,7 +17,7 @@ public interface IFleetService {
     FleetServer.FleetClientToken RegisterClient(FleetServer.FleetClientRegistration registrationModel);
     
     [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IFleetService/Heartbeat", ReplyAction="http://tempuri.org/IFleetService/HeartbeatResponse")]
-    FleetServer.FleetHearbeatEnum Heartbeat(FleetServer.FleetClientToken token, FleetServer.FleetClientIdentifier[] knownClients);
+    FleetServer.FleetHearbeatEnum Heartbeat(FleetServer.FleetClientToken token);
     
     [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IFleetService/QueryClients", ReplyAction="http://tempuri.org/IFleetService/QueryClientsResponse")]
     FleetServer.FleetClientIdentifier[] QueryClients(FleetServer.FleetClientToken token);
@@ -75,8 +75,8 @@ public class FleetServiceClient : System.ServiceModel.ClientBase<IFleetService>,
         return base.Channel.RegisterClient(registrationModel);
     }
     
-    public FleetServer.FleetHearbeatEnum Heartbeat(FleetServer.FleetClientToken token, FleetServer.FleetClientIdentifier[] knownClients) {
-        return base.Channel.Heartbeat(token, knownClients);
+    public FleetServer.FleetHearbeatEnum Heartbeat(FleetServer.FleetClientToken token) {
+        return base.Channel.Heartbeat(token);
     }
     
     public FleetServer.FleetClientIdentifier[] QueryClients(FleetServer.FleetClientToken token) {
@@ -186,8 +186,6 @@ namespace tempuri.org {
         
         private FleetServer.FleetClientToken tokenField;
         
-        private FleetServer.FleetClientIdentifier[] knownClientsField;
-        
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
             get {
                 return this.extensionDataField;
@@ -204,16 +202,6 @@ namespace tempuri.org {
             }
             set {
                 this.tokenField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=1)]
-        public FleetServer.FleetClientIdentifier[] knownClients {
-            get {
-                return this.knownClientsField;
-            }
-            set {
-                this.knownClientsField = value;
             }
         }
     }
@@ -988,6 +976,27 @@ namespace FleetServer {
         }
     }
     
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.FlagsAttribute()]
+    [System.Runtime.Serialization.DataContractAttribute(Name="FleetHearbeatEnum", Namespace="http://schemas.datacontract.org/2004/07/FleetServer")]
+    public enum FleetHearbeatEnum : int {
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        NoUpdates = 1,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        ClientUpdate = 2,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        ControlUpdate = 4,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        ManageUpdate = 8,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        FileAvailable = 16,
+    }
+    
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="FleetClientIdentifier", Namespace="http://schemas.datacontract.org/2004/07/FleetServer")]
@@ -1029,27 +1038,6 @@ namespace FleetServer {
         }
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.FlagsAttribute()]
-    [System.Runtime.Serialization.DataContractAttribute(Name="FleetHearbeatEnum", Namespace="http://schemas.datacontract.org/2004/07/FleetServer")]
-    public enum FleetHearbeatEnum : int {
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        NoUpdates = 1,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        ClientUpdate = 2,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        ControlUpdate = 4,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        ManageUpdate = 8,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        FileAvailable = 16,
-    }
-    
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="FleetFileIdentifier", Namespace="http://schemas.datacontract.org/2004/07/FleetServer")]
@@ -1062,6 +1050,8 @@ namespace FleetServer {
         private int FileSizeField;
         
         private string IdentifierField;
+        
+        private string SenderNameField;
         
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
             get {
@@ -1099,6 +1089,16 @@ namespace FleetServer {
             }
             set {
                 this.IdentifierField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string SenderName {
+            get {
+                return this.SenderNameField;
+            }
+            set {
+                this.SenderNameField = value;
             }
         }
     }
