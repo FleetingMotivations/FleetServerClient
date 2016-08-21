@@ -1151,12 +1151,36 @@ namespace FleetServer {
         
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
+        private int ApplicationIdField;
+        
+        private int IdentifierField;
+        
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
             get {
                 return this.extensionDataField;
             }
             set {
                 this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int ApplicationId {
+            get {
+                return this.ApplicationIdField;
+            }
+            set {
+                this.ApplicationIdField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Identifier {
+            get {
+                return this.IdentifierField;
+            }
+            set {
+                this.IdentifierField = value;
             }
         }
     }
@@ -1168,12 +1192,60 @@ namespace FleetServer {
         
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
+        private int ApplicationIdField;
+        
+        private int IdentifierField;
+        
+        private string MessageField;
+        
+        private System.DateTime SentField;
+        
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
             get {
                 return this.extensionDataField;
             }
             set {
                 this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int ApplicationId {
+            get {
+                return this.ApplicationIdField;
+            }
+            set {
+                this.ApplicationIdField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Identifier {
+            get {
+                return this.IdentifierField;
+            }
+            set {
+                this.IdentifierField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Message {
+            get {
+                return this.MessageField;
+            }
+            set {
+                this.MessageField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime Sent {
+            get {
+                return this.SentField;
+            }
+            set {
+                this.SentField = value;
             }
         }
     }
