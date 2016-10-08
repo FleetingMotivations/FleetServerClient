@@ -12,20 +12,20 @@ namespace FleetServer
 {
     using System.Runtime.Serialization;
     using System;
-    
-    
+
+
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="FleetClientRegistration", Namespace="http://schemas.datacontract.org/2004/07/FleetServer")]
+    [System.Runtime.Serialization.DataContractAttribute(Name = "FleetClientRegistration", Namespace = "http://schemas.datacontract.org/2004/07/FleetServer")]
     public partial class FleetClientRegistration : object, System.Runtime.Serialization.IExtensibleDataObject
     {
-        
+
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
+
         private string FriendlyNameField;
-        
+
         private string RoomIdentifierField;
-        
+
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData
         {
             get
@@ -37,7 +37,7 @@ namespace FleetServer
                 this.extensionDataField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string FriendlyName
         {
@@ -50,7 +50,7 @@ namespace FleetServer
                 this.FriendlyNameField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string RoomIdentifier
         {
@@ -64,19 +64,19 @@ namespace FleetServer
             }
         }
     }
-    
+
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="FleetClientToken", Namespace="http://schemas.datacontract.org/2004/07/FleetServer")]
+    [System.Runtime.Serialization.DataContractAttribute(Name = "FleetClientToken", Namespace = "http://schemas.datacontract.org/2004/07/FleetServer")]
     public partial class FleetClientToken : object, System.Runtime.Serialization.IExtensibleDataObject
     {
-        
+
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
+
         private string IdentifierField;
-        
+
         private string TokenField;
-        
+
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData
         {
             get
@@ -88,7 +88,7 @@ namespace FleetServer
                 this.extensionDataField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string Identifier
         {
@@ -101,7 +101,7 @@ namespace FleetServer
                 this.IdentifierField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string Token
         {
@@ -115,59 +115,67 @@ namespace FleetServer
             }
         }
     }
-    
+
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.FlagsAttribute()]
-    [System.Runtime.Serialization.DataContractAttribute(Name="FleetHearbeatEnum", Namespace="http://schemas.datacontract.org/2004/07/FleetServer")]
+    [System.Runtime.Serialization.DataContractAttribute(Name = "FleetHearbeatEnum", Namespace = "http://schemas.datacontract.org/2004/07/FleetServer")]
     public enum FleetHearbeatEnum : int
     {
-        
+
         [System.Runtime.Serialization.EnumMemberAttribute()]
         NoUpdates = 1,
-        
+
         [System.Runtime.Serialization.EnumMemberAttribute()]
         InWorkgroup = 4,
-        
+
         [System.Runtime.Serialization.EnumMemberAttribute()]
         ManageUpdate = 8,
-        
+
         [System.Runtime.Serialization.EnumMemberAttribute()]
         FileAvailable = 8,
     }
-    
+
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.FlagsAttribute()]
-    [System.Runtime.Serialization.DataContractAttribute(Name="FleetClientContext", Namespace="http://schemas.datacontract.org/2004/07/FleetServer")]
+    [System.Runtime.Serialization.DataContractAttribute(Name = "FleetClientContext", Namespace = "http://schemas.datacontract.org/2004/07/FleetServer")]
     public enum FleetClientContext : int
     {
-        
+
         [System.Runtime.Serialization.EnumMemberAttribute()]
         Room = 1,
-        
+
         [System.Runtime.Serialization.EnumMemberAttribute()]
         Building = 4,
-        
+
         [System.Runtime.Serialization.EnumMemberAttribute()]
         Campus = 8,
-        
+
         [System.Runtime.Serialization.EnumMemberAttribute()]
         Workgroup = 16,
     }
-    
+
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="FleetClientIdentifier", Namespace="http://schemas.datacontract.org/2004/07/FleetServer")]
+    [System.Runtime.Serialization.DataContractAttribute(Name = "FleetClientIdentifier", Namespace = "http://schemas.datacontract.org/2004/07/FleetServer")]
     public partial class FleetClientIdentifier : object, System.Runtime.Serialization.IExtensibleDataObject
     {
-        
+
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
+
+        private string ColourField;
+
         private string IdentifierField;
-        
-        private System.DateTime LastSeenField;
-        
+
+        private bool IsFacilitatorField;
+
+        private System.Nullable<System.DateTime> LastSeenField;
+
+        private float TopXRoomOffsetField;
+
+        private float TopYRoomOffsetField;
+
         private string WorkstationNameField;
-        
+
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData
         {
             get
@@ -179,7 +187,20 @@ namespace FleetServer
                 this.extensionDataField = value;
             }
         }
-        
+
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Colour
+        {
+            get
+            {
+                return this.ColourField;
+            }
+            set
+            {
+                this.ColourField = value;
+            }
+        }
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string Identifier
         {
@@ -192,9 +213,22 @@ namespace FleetServer
                 this.IdentifierField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.DateTime LastSeen
+        public bool IsFacilitator
+        {
+            get
+            {
+                return this.IsFacilitatorField;
+            }
+            set
+            {
+                this.IsFacilitatorField = value;
+            }
+        }
+
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<System.DateTime> LastSeen
         {
             get
             {
@@ -205,7 +239,33 @@ namespace FleetServer
                 this.LastSeenField = value;
             }
         }
-        
+
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public float TopXRoomOffset
+        {
+            get
+            {
+                return this.TopXRoomOffsetField;
+            }
+            set
+            {
+                this.TopXRoomOffsetField = value;
+            }
+        }
+
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public float TopYRoomOffset
+        {
+            get
+            {
+                return this.TopYRoomOffsetField;
+            }
+            set
+            {
+                this.TopYRoomOffsetField = value;
+            }
+        }
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string WorkstationName
         {
@@ -219,21 +279,21 @@ namespace FleetServer
             }
         }
     }
-    
+
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="FleetControlStatus", Namespace="http://schemas.datacontract.org/2004/07/FleetServer")]
+    [System.Runtime.Serialization.DataContractAttribute(Name = "FleetControlStatus", Namespace = "http://schemas.datacontract.org/2004/07/FleetServer")]
     public partial class FleetControlStatus : object, System.Runtime.Serialization.IExtensibleDataObject
     {
-        
+
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
+
         private FleetServer.FleetApplicationIdentifier[] AllowedApplicationsField;
-        
+
         private bool CanShareField;
-        
+
         private int WorkgroupIdField;
-        
+
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData
         {
             get
@@ -245,7 +305,7 @@ namespace FleetServer
                 this.extensionDataField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public FleetServer.FleetApplicationIdentifier[] AllowedApplications
         {
@@ -258,7 +318,7 @@ namespace FleetServer
                 this.AllowedApplicationsField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public bool CanShare
         {
@@ -271,7 +331,7 @@ namespace FleetServer
                 this.CanShareField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public int WorkgroupId
         {
@@ -285,19 +345,19 @@ namespace FleetServer
             }
         }
     }
-    
+
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="FleetApplicationIdentifier", Namespace="http://schemas.datacontract.org/2004/07/FleetServer")]
+    [System.Runtime.Serialization.DataContractAttribute(Name = "FleetApplicationIdentifier", Namespace = "http://schemas.datacontract.org/2004/07/FleetServer")]
     public partial class FleetApplicationIdentifier : object, System.Runtime.Serialization.IExtensibleDataObject
     {
-        
+
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
+
         private int ApplicationIdField;
-        
+
         private string ApplicationNameField;
-        
+
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData
         {
             get
@@ -309,7 +369,7 @@ namespace FleetServer
                 this.extensionDataField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public int ApplicationId
         {
@@ -322,7 +382,7 @@ namespace FleetServer
                 this.ApplicationIdField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string ApplicationName
         {
@@ -336,15 +396,17 @@ namespace FleetServer
             }
         }
     }
-    
+
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="FleetWorkstationHierachy", Namespace="http://schemas.datacontract.org/2004/07/FleetServer")]
+    [System.Runtime.Serialization.DataContractAttribute(Name = "FleetWorkstationHierachy", Namespace = "http://schemas.datacontract.org/2004/07/FleetServer")]
     public partial class FleetWorkstationHierachy : object, System.Runtime.Serialization.IExtensibleDataObject
     {
-        
+
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
+
+        private FleetServer.FleetCampusIdentifier[] CampusesField;
+
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData
         {
             get
@@ -354,26 +416,37 @@ namespace FleetServer
             set
             {
                 this.extensionDataField = value;
+            }
+        }
+
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public FleetServer.FleetCampusIdentifier[] Campuses
+        {
+            get
+            {
+                return this.CampusesField;
+            }
+            set
+            {
+                this.CampusesField = value;
             }
         }
     }
-    
+
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="FleetFileIdentifier", Namespace="http://schemas.datacontract.org/2004/07/FleetServer")]
-    public partial class FleetFileIdentifier : object, System.Runtime.Serialization.IExtensibleDataObject
+    [System.Runtime.Serialization.DataContractAttribute(Name = "FleetCampusIdentifier", Namespace = "http://schemas.datacontract.org/2004/07/FleetServer")]
+    public partial class FleetCampusIdentifier : object, System.Runtime.Serialization.IExtensibleDataObject
     {
-        
+
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        private string FileNameField;
-        
-        private int FileSizeField;
-        
-        private string IdentifierField;
-        
-        private string SenderNameField;
-        
+
+        private FleetServer.FleetBuildingIdentifier[] BuildingsField;
+
+        private int IdField;
+
+        private string NameField;
+
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData
         {
             get
@@ -385,7 +458,207 @@ namespace FleetServer
                 this.extensionDataField = value;
             }
         }
-        
+
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public FleetServer.FleetBuildingIdentifier[] Buildings
+        {
+            get
+            {
+                return this.BuildingsField;
+            }
+            set
+            {
+                this.BuildingsField = value;
+            }
+        }
+
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Id
+        {
+            get
+            {
+                return this.IdField;
+            }
+            set
+            {
+                this.IdField = value;
+            }
+        }
+
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Name
+        {
+            get
+            {
+                return this.NameField;
+            }
+            set
+            {
+                this.NameField = value;
+            }
+        }
+    }
+
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name = "FleetBuildingIdentifier", Namespace = "http://schemas.datacontract.org/2004/07/FleetServer")]
+    public partial class FleetBuildingIdentifier : object, System.Runtime.Serialization.IExtensibleDataObject
+    {
+
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+
+        private int IdField;
+
+        private string NameField;
+
+        private FleetServer.FleetRoomIdentifier[] RoomsField;
+
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData
+        {
+            get
+            {
+                return this.extensionDataField;
+            }
+            set
+            {
+                this.extensionDataField = value;
+            }
+        }
+
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Id
+        {
+            get
+            {
+                return this.IdField;
+            }
+            set
+            {
+                this.IdField = value;
+            }
+        }
+
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Name
+        {
+            get
+            {
+                return this.NameField;
+            }
+            set
+            {
+                this.NameField = value;
+            }
+        }
+
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public FleetServer.FleetRoomIdentifier[] Rooms
+        {
+            get
+            {
+                return this.RoomsField;
+            }
+            set
+            {
+                this.RoomsField = value;
+            }
+        }
+    }
+
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name = "FleetRoomIdentifier", Namespace = "http://schemas.datacontract.org/2004/07/FleetServer")]
+    public partial class FleetRoomIdentifier : object, System.Runtime.Serialization.IExtensibleDataObject
+    {
+
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+
+        private FleetServer.FleetClientIdentifier[] ClientsField;
+
+        private int IdField;
+
+        private string NameField;
+
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData
+        {
+            get
+            {
+                return this.extensionDataField;
+            }
+            set
+            {
+                this.extensionDataField = value;
+            }
+        }
+
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public FleetServer.FleetClientIdentifier[] Clients
+        {
+            get
+            {
+                return this.ClientsField;
+            }
+            set
+            {
+                this.ClientsField = value;
+            }
+        }
+
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Id
+        {
+            get
+            {
+                return this.IdField;
+            }
+            set
+            {
+                this.IdField = value;
+            }
+        }
+
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Name
+        {
+            get
+            {
+                return this.NameField;
+            }
+            set
+            {
+                this.NameField = value;
+            }
+        }
+    }
+
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name = "FleetFileIdentifier", Namespace = "http://schemas.datacontract.org/2004/07/FleetServer")]
+    public partial class FleetFileIdentifier : object, System.Runtime.Serialization.IExtensibleDataObject
+    {
+
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+
+        private string FileNameField;
+
+        private int FileSizeField;
+
+        private string IdentifierField;
+
+        private string SenderNameField;
+
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData
+        {
+            get
+            {
+                return this.extensionDataField;
+            }
+            set
+            {
+                this.extensionDataField = value;
+            }
+        }
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string FileName
         {
@@ -398,7 +671,7 @@ namespace FleetServer
                 this.FileNameField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public int FileSize
         {
@@ -411,7 +684,7 @@ namespace FleetServer
                 this.FileSizeField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string Identifier
         {
@@ -424,7 +697,7 @@ namespace FleetServer
                 this.IdentifierField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string SenderName
         {
@@ -438,19 +711,19 @@ namespace FleetServer
             }
         }
     }
-    
+
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="FleetFile", Namespace="http://schemas.datacontract.org/2004/07/FleetServer")]
+    [System.Runtime.Serialization.DataContractAttribute(Name = "FleetFile", Namespace = "http://schemas.datacontract.org/2004/07/FleetServer")]
     public partial class FleetFile : object, System.Runtime.Serialization.IExtensibleDataObject
     {
-        
+
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
+
         private byte[] FileContentsField;
-        
+
         private string FileNameField;
-        
+
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData
         {
             get
@@ -462,7 +735,7 @@ namespace FleetServer
                 this.extensionDataField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public byte[] FileContents
         {
@@ -475,7 +748,7 @@ namespace FleetServer
                 this.FileContentsField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string FileName
         {
@@ -489,19 +762,19 @@ namespace FleetServer
             }
         }
     }
-    
+
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="FleetMessageIdentifier", Namespace="http://schemas.datacontract.org/2004/07/FleetServer")]
+    [System.Runtime.Serialization.DataContractAttribute(Name = "FleetMessageIdentifier", Namespace = "http://schemas.datacontract.org/2004/07/FleetServer")]
     public partial class FleetMessageIdentifier : object, System.Runtime.Serialization.IExtensibleDataObject
     {
-        
+
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
+
         private int ApplicationIdField;
-        
+
         private int IdentifierField;
-        
+
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData
         {
             get
@@ -513,7 +786,7 @@ namespace FleetServer
                 this.extensionDataField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public int ApplicationId
         {
@@ -526,7 +799,7 @@ namespace FleetServer
                 this.ApplicationIdField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public int Identifier
         {
@@ -540,23 +813,27 @@ namespace FleetServer
             }
         }
     }
-    
+
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="FleetMessage", Namespace="http://schemas.datacontract.org/2004/07/FleetServer")]
+    [System.Runtime.Serialization.DataContractAttribute(Name = "FleetMessage", Namespace = "http://schemas.datacontract.org/2004/07/FleetServer")]
     public partial class FleetMessage : object, System.Runtime.Serialization.IExtensibleDataObject
     {
-        
+
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
+
+        private string ApplicationField;
+
         private int ApplicationIdField;
-        
+
         private int IdentifierField;
-        
+
         private string MessageField;
-        
+
+        private string SenderField;
+
         private System.DateTime SentField;
-        
+
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData
         {
             get
@@ -568,7 +845,20 @@ namespace FleetServer
                 this.extensionDataField = value;
             }
         }
-        
+
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Application
+        {
+            get
+            {
+                return this.ApplicationField;
+            }
+            set
+            {
+                this.ApplicationField = value;
+            }
+        }
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public int ApplicationId
         {
@@ -581,7 +871,7 @@ namespace FleetServer
                 this.ApplicationIdField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public int Identifier
         {
@@ -594,7 +884,7 @@ namespace FleetServer
                 this.IdentifierField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string Message
         {
@@ -607,7 +897,20 @@ namespace FleetServer
                 this.MessageField = value;
             }
         }
-        
+
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Sender
+        {
+            get
+            {
+                return this.SenderField;
+            }
+            set
+            {
+                this.SenderField = value;
+            }
+        }
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.DateTime Sent
         {
@@ -625,86 +928,86 @@ namespace FleetServer
 
 
 [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-[System.ServiceModel.ServiceContractAttribute(ConfigurationName="IFleetService")]
+[System.ServiceModel.ServiceContractAttribute(ConfigurationName = "IFleetService")]
 public interface IFleetService
 {
-    
-    [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IFleetService/RegisterClient", ReplyAction="http://tempuri.org/IFleetService/RegisterClientResponse")]
+
+    [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/IFleetService/RegisterClient", ReplyAction = "http://tempuri.org/IFleetService/RegisterClientResponse")]
     FleetServer.FleetClientToken RegisterClient(FleetServer.FleetClientRegistration registrationModel);
-    
-    [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IFleetService/RegisterClient", ReplyAction="http://tempuri.org/IFleetService/RegisterClientResponse")]
+
+    [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/IFleetService/RegisterClient", ReplyAction = "http://tempuri.org/IFleetService/RegisterClientResponse")]
     System.Threading.Tasks.Task<FleetServer.FleetClientToken> RegisterClientAsync(FleetServer.FleetClientRegistration registrationModel);
-    
-    [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IFleetService/Heartbeat", ReplyAction="http://tempuri.org/IFleetService/HeartbeatResponse")]
+
+    [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/IFleetService/Heartbeat", ReplyAction = "http://tempuri.org/IFleetService/HeartbeatResponse")]
     FleetServer.FleetHearbeatEnum Heartbeat(FleetServer.FleetClientToken token);
-    
-    [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IFleetService/Heartbeat", ReplyAction="http://tempuri.org/IFleetService/HeartbeatResponse")]
+
+    [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/IFleetService/Heartbeat", ReplyAction = "http://tempuri.org/IFleetService/HeartbeatResponse")]
     System.Threading.Tasks.Task<FleetServer.FleetHearbeatEnum> HeartbeatAsync(FleetServer.FleetClientToken token);
-    
-    [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IFleetService/QueryClients", ReplyAction="http://tempuri.org/IFleetService/QueryClientsResponse")]
+
+    [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/IFleetService/QueryClients", ReplyAction = "http://tempuri.org/IFleetService/QueryClientsResponse")]
     FleetServer.FleetClientIdentifier[] QueryClients(FleetServer.FleetClientToken token, FleetServer.FleetClientContext context, int id);
-    
-    [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IFleetService/QueryClients", ReplyAction="http://tempuri.org/IFleetService/QueryClientsResponse")]
+
+    [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/IFleetService/QueryClients", ReplyAction = "http://tempuri.org/IFleetService/QueryClientsResponse")]
     System.Threading.Tasks.Task<FleetServer.FleetClientIdentifier[]> QueryClientsAsync(FleetServer.FleetClientToken token, FleetServer.FleetClientContext context, int id);
-    
-    [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IFleetService/QueryControlStatus", ReplyAction="http://tempuri.org/IFleetService/QueryControlStatusResponse")]
+
+    [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/IFleetService/QueryControlStatus", ReplyAction = "http://tempuri.org/IFleetService/QueryControlStatusResponse")]
     FleetServer.FleetControlStatus QueryControlStatus(FleetServer.FleetClientToken token);
-    
-    [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IFleetService/QueryControlStatus", ReplyAction="http://tempuri.org/IFleetService/QueryControlStatusResponse")]
+
+    [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/IFleetService/QueryControlStatus", ReplyAction = "http://tempuri.org/IFleetService/QueryControlStatusResponse")]
     System.Threading.Tasks.Task<FleetServer.FleetControlStatus> QueryControlStatusAsync(FleetServer.FleetClientToken token);
-    
-    [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IFleetService/QueryWorkstationHierachy", ReplyAction="http://tempuri.org/IFleetService/QueryWorkstationHierachyResponse")]
+
+    [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/IFleetService/QueryWorkstationHierachy", ReplyAction = "http://tempuri.org/IFleetService/QueryWorkstationHierachyResponse")]
     FleetServer.FleetWorkstationHierachy QueryWorkstationHierachy();
-    
-    [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IFleetService/QueryWorkstationHierachy", ReplyAction="http://tempuri.org/IFleetService/QueryWorkstationHierachyResponse")]
+
+    [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/IFleetService/QueryWorkstationHierachy", ReplyAction = "http://tempuri.org/IFleetService/QueryWorkstationHierachyResponse")]
     System.Threading.Tasks.Task<FleetServer.FleetWorkstationHierachy> QueryWorkstationHierachyAsync();
-    
-    [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IFleetService/QueryFiles", ReplyAction="http://tempuri.org/IFleetService/QueryFilesResponse")]
+
+    [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/IFleetService/QueryFiles", ReplyAction = "http://tempuri.org/IFleetService/QueryFilesResponse")]
     FleetServer.FleetFileIdentifier[] QueryFiles(FleetServer.FleetClientToken token);
-    
-    [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IFleetService/QueryFiles", ReplyAction="http://tempuri.org/IFleetService/QueryFilesResponse")]
+
+    [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/IFleetService/QueryFiles", ReplyAction = "http://tempuri.org/IFleetService/QueryFilesResponse")]
     System.Threading.Tasks.Task<FleetServer.FleetFileIdentifier[]> QueryFilesAsync(FleetServer.FleetClientToken token);
-    
-    [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IFleetService/GetFile", ReplyAction="http://tempuri.org/IFleetService/GetFileResponse")]
+
+    [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/IFleetService/GetFile", ReplyAction = "http://tempuri.org/IFleetService/GetFileResponse")]
     FleetServer.FleetFile GetFile(FleetServer.FleetClientToken token, FleetServer.FleetFileIdentifier fileId);
-    
-    [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IFleetService/GetFile", ReplyAction="http://tempuri.org/IFleetService/GetFileResponse")]
+
+    [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/IFleetService/GetFile", ReplyAction = "http://tempuri.org/IFleetService/GetFileResponse")]
     System.Threading.Tasks.Task<FleetServer.FleetFile> GetFileAsync(FleetServer.FleetClientToken token, FleetServer.FleetFileIdentifier fileId);
-    
-    [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IFleetService/SendFileSingleRecipient", ReplyAction="http://tempuri.org/IFleetService/SendFileSingleRecipientResponse")]
+
+    [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/IFleetService/SendFileSingleRecipient", ReplyAction = "http://tempuri.org/IFleetService/SendFileSingleRecipientResponse")]
     bool SendFileSingleRecipient(FleetServer.FleetClientToken token, FleetServer.FleetClientIdentifier recipient, FleetServer.FleetFile file);
-    
-    [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IFleetService/SendFileSingleRecipient", ReplyAction="http://tempuri.org/IFleetService/SendFileSingleRecipientResponse")]
+
+    [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/IFleetService/SendFileSingleRecipient", ReplyAction = "http://tempuri.org/IFleetService/SendFileSingleRecipientResponse")]
     System.Threading.Tasks.Task<bool> SendFileSingleRecipientAsync(FleetServer.FleetClientToken token, FleetServer.FleetClientIdentifier recipient, FleetServer.FleetFile file);
-    
-    [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IFleetService/SendFileMultipleRecipient", ReplyAction="http://tempuri.org/IFleetService/SendFileMultipleRecipientResponse")]
+
+    [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/IFleetService/SendFileMultipleRecipient", ReplyAction = "http://tempuri.org/IFleetService/SendFileMultipleRecipientResponse")]
     bool SendFileMultipleRecipient(FleetServer.FleetClientToken token, FleetServer.FleetClientIdentifier[] recipients, FleetServer.FleetFile file);
-    
-    [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IFleetService/SendFileMultipleRecipient", ReplyAction="http://tempuri.org/IFleetService/SendFileMultipleRecipientResponse")]
+
+    [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/IFleetService/SendFileMultipleRecipient", ReplyAction = "http://tempuri.org/IFleetService/SendFileMultipleRecipientResponse")]
     System.Threading.Tasks.Task<bool> SendFileMultipleRecipientAsync(FleetServer.FleetClientToken token, FleetServer.FleetClientIdentifier[] recipients, FleetServer.FleetFile file);
-    
-    [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IFleetService/QueryMessages", ReplyAction="http://tempuri.org/IFleetService/QueryMessagesResponse")]
+
+    [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/IFleetService/QueryMessages", ReplyAction = "http://tempuri.org/IFleetService/QueryMessagesResponse")]
     FleetServer.FleetMessageIdentifier[] QueryMessages(FleetServer.FleetClientToken token);
-    
-    [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IFleetService/QueryMessages", ReplyAction="http://tempuri.org/IFleetService/QueryMessagesResponse")]
+
+    [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/IFleetService/QueryMessages", ReplyAction = "http://tempuri.org/IFleetService/QueryMessagesResponse")]
     System.Threading.Tasks.Task<FleetServer.FleetMessageIdentifier[]> QueryMessagesAsync(FleetServer.FleetClientToken token);
-    
-    [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IFleetService/GetMessage", ReplyAction="http://tempuri.org/IFleetService/GetMessageResponse")]
+
+    [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/IFleetService/GetMessage", ReplyAction = "http://tempuri.org/IFleetService/GetMessageResponse")]
     FleetServer.FleetMessage GetMessage(FleetServer.FleetClientToken token, FleetServer.FleetMessageIdentifier fileId);
-    
-    [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IFleetService/GetMessage", ReplyAction="http://tempuri.org/IFleetService/GetMessageResponse")]
+
+    [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/IFleetService/GetMessage", ReplyAction = "http://tempuri.org/IFleetService/GetMessageResponse")]
     System.Threading.Tasks.Task<FleetServer.FleetMessage> GetMessageAsync(FleetServer.FleetClientToken token, FleetServer.FleetMessageIdentifier fileId);
-    
-    [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IFleetService/SendMessageSingleRecipient", ReplyAction="http://tempuri.org/IFleetService/SendMessageSingleRecipientResponse")]
+
+    [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/IFleetService/SendMessageSingleRecipient", ReplyAction = "http://tempuri.org/IFleetService/SendMessageSingleRecipientResponse")]
     bool SendMessageSingleRecipient(FleetServer.FleetClientToken token, FleetServer.FleetClientIdentifier recipient, FleetServer.FleetMessage msg);
-    
-    [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IFleetService/SendMessageSingleRecipient", ReplyAction="http://tempuri.org/IFleetService/SendMessageSingleRecipientResponse")]
+
+    [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/IFleetService/SendMessageSingleRecipient", ReplyAction = "http://tempuri.org/IFleetService/SendMessageSingleRecipientResponse")]
     System.Threading.Tasks.Task<bool> SendMessageSingleRecipientAsync(FleetServer.FleetClientToken token, FleetServer.FleetClientIdentifier recipient, FleetServer.FleetMessage msg);
-    
-    [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IFleetService/SendMessageMultipleRecipient", ReplyAction="http://tempuri.org/IFleetService/SendMessageMultipleRecipientResponse")]
+
+    [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/IFleetService/SendMessageMultipleRecipient", ReplyAction = "http://tempuri.org/IFleetService/SendMessageMultipleRecipientResponse")]
     bool SendMessageMultipleRecipient(FleetServer.FleetClientToken token, FleetServer.FleetClientIdentifier[] recipients, FleetServer.FleetMessage msg);
-    
-    [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IFleetService/SendMessageMultipleRecipient", ReplyAction="http://tempuri.org/IFleetService/SendMessageMultipleRecipientResponse")]
+
+    [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/IFleetService/SendMessageMultipleRecipient", ReplyAction = "http://tempuri.org/IFleetService/SendMessageMultipleRecipientResponse")]
     System.Threading.Tasks.Task<bool> SendMessageMultipleRecipientAsync(FleetServer.FleetClientToken token, FleetServer.FleetClientIdentifier[] recipients, FleetServer.FleetMessage msg);
 }
 
@@ -717,156 +1020,156 @@ public interface IFleetServiceChannel : IFleetService, System.ServiceModel.IClie
 [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
 public partial class FleetServiceClient : System.ServiceModel.ClientBase<IFleetService>, IFleetService
 {
-    
+
     public FleetServiceClient()
     {
     }
-    
-    public FleetServiceClient(string endpointConfigurationName) : 
+
+    public FleetServiceClient(string endpointConfigurationName) :
             base(endpointConfigurationName)
     {
     }
-    
-    public FleetServiceClient(string endpointConfigurationName, string remoteAddress) : 
+
+    public FleetServiceClient(string endpointConfigurationName, string remoteAddress) :
             base(endpointConfigurationName, remoteAddress)
     {
     }
-    
-    public FleetServiceClient(string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) : 
+
+    public FleetServiceClient(string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) :
             base(endpointConfigurationName, remoteAddress)
     {
     }
-    
-    public FleetServiceClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
+
+    public FleetServiceClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) :
             base(binding, remoteAddress)
     {
     }
-    
+
     public FleetServer.FleetClientToken RegisterClient(FleetServer.FleetClientRegistration registrationModel)
     {
         return base.Channel.RegisterClient(registrationModel);
     }
-    
+
     public System.Threading.Tasks.Task<FleetServer.FleetClientToken> RegisterClientAsync(FleetServer.FleetClientRegistration registrationModel)
     {
         return base.Channel.RegisterClientAsync(registrationModel);
     }
-    
+
     public FleetServer.FleetHearbeatEnum Heartbeat(FleetServer.FleetClientToken token)
     {
         return base.Channel.Heartbeat(token);
     }
-    
+
     public System.Threading.Tasks.Task<FleetServer.FleetHearbeatEnum> HeartbeatAsync(FleetServer.FleetClientToken token)
     {
         return base.Channel.HeartbeatAsync(token);
     }
-    
+
     public FleetServer.FleetClientIdentifier[] QueryClients(FleetServer.FleetClientToken token, FleetServer.FleetClientContext context, int id)
     {
         return base.Channel.QueryClients(token, context, id);
     }
-    
+
     public System.Threading.Tasks.Task<FleetServer.FleetClientIdentifier[]> QueryClientsAsync(FleetServer.FleetClientToken token, FleetServer.FleetClientContext context, int id)
     {
         return base.Channel.QueryClientsAsync(token, context, id);
     }
-    
+
     public FleetServer.FleetControlStatus QueryControlStatus(FleetServer.FleetClientToken token)
     {
         return base.Channel.QueryControlStatus(token);
     }
-    
+
     public System.Threading.Tasks.Task<FleetServer.FleetControlStatus> QueryControlStatusAsync(FleetServer.FleetClientToken token)
     {
         return base.Channel.QueryControlStatusAsync(token);
     }
-    
+
     public FleetServer.FleetWorkstationHierachy QueryWorkstationHierachy()
     {
         return base.Channel.QueryWorkstationHierachy();
     }
-    
+
     public System.Threading.Tasks.Task<FleetServer.FleetWorkstationHierachy> QueryWorkstationHierachyAsync()
     {
         return base.Channel.QueryWorkstationHierachyAsync();
     }
-    
+
     public FleetServer.FleetFileIdentifier[] QueryFiles(FleetServer.FleetClientToken token)
     {
         return base.Channel.QueryFiles(token);
     }
-    
+
     public System.Threading.Tasks.Task<FleetServer.FleetFileIdentifier[]> QueryFilesAsync(FleetServer.FleetClientToken token)
     {
         return base.Channel.QueryFilesAsync(token);
     }
-    
+
     public FleetServer.FleetFile GetFile(FleetServer.FleetClientToken token, FleetServer.FleetFileIdentifier fileId)
     {
         return base.Channel.GetFile(token, fileId);
     }
-    
+
     public System.Threading.Tasks.Task<FleetServer.FleetFile> GetFileAsync(FleetServer.FleetClientToken token, FleetServer.FleetFileIdentifier fileId)
     {
         return base.Channel.GetFileAsync(token, fileId);
     }
-    
+
     public bool SendFileSingleRecipient(FleetServer.FleetClientToken token, FleetServer.FleetClientIdentifier recipient, FleetServer.FleetFile file)
     {
         return base.Channel.SendFileSingleRecipient(token, recipient, file);
     }
-    
+
     public System.Threading.Tasks.Task<bool> SendFileSingleRecipientAsync(FleetServer.FleetClientToken token, FleetServer.FleetClientIdentifier recipient, FleetServer.FleetFile file)
     {
         return base.Channel.SendFileSingleRecipientAsync(token, recipient, file);
     }
-    
+
     public bool SendFileMultipleRecipient(FleetServer.FleetClientToken token, FleetServer.FleetClientIdentifier[] recipients, FleetServer.FleetFile file)
     {
         return base.Channel.SendFileMultipleRecipient(token, recipients, file);
     }
-    
+
     public System.Threading.Tasks.Task<bool> SendFileMultipleRecipientAsync(FleetServer.FleetClientToken token, FleetServer.FleetClientIdentifier[] recipients, FleetServer.FleetFile file)
     {
         return base.Channel.SendFileMultipleRecipientAsync(token, recipients, file);
     }
-    
+
     public FleetServer.FleetMessageIdentifier[] QueryMessages(FleetServer.FleetClientToken token)
     {
         return base.Channel.QueryMessages(token);
     }
-    
+
     public System.Threading.Tasks.Task<FleetServer.FleetMessageIdentifier[]> QueryMessagesAsync(FleetServer.FleetClientToken token)
     {
         return base.Channel.QueryMessagesAsync(token);
     }
-    
+
     public FleetServer.FleetMessage GetMessage(FleetServer.FleetClientToken token, FleetServer.FleetMessageIdentifier fileId)
     {
         return base.Channel.GetMessage(token, fileId);
     }
-    
+
     public System.Threading.Tasks.Task<FleetServer.FleetMessage> GetMessageAsync(FleetServer.FleetClientToken token, FleetServer.FleetMessageIdentifier fileId)
     {
         return base.Channel.GetMessageAsync(token, fileId);
     }
-    
+
     public bool SendMessageSingleRecipient(FleetServer.FleetClientToken token, FleetServer.FleetClientIdentifier recipient, FleetServer.FleetMessage msg)
     {
         return base.Channel.SendMessageSingleRecipient(token, recipient, msg);
     }
-    
+
     public System.Threading.Tasks.Task<bool> SendMessageSingleRecipientAsync(FleetServer.FleetClientToken token, FleetServer.FleetClientIdentifier recipient, FleetServer.FleetMessage msg)
     {
         return base.Channel.SendMessageSingleRecipientAsync(token, recipient, msg);
     }
-    
+
     public bool SendMessageMultipleRecipient(FleetServer.FleetClientToken token, FleetServer.FleetClientIdentifier[] recipients, FleetServer.FleetMessage msg)
     {
         return base.Channel.SendMessageMultipleRecipient(token, recipients, msg);
     }
-    
+
     public System.Threading.Tasks.Task<bool> SendMessageMultipleRecipientAsync(FleetServer.FleetClientToken token, FleetServer.FleetClientIdentifier[] recipients, FleetServer.FleetMessage msg)
     {
         return base.Channel.SendMessageMultipleRecipientAsync(token, recipients, msg);
